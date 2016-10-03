@@ -1,10 +1,13 @@
 <html>
   <head>
-    <title>Socket.io</title>
-    <script src="/socket.io/socket.io.js"></script>
+    <title>Order Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js" charset="utf-8"></script>
     <script>
     $(document).ready(function(){
           var socket = io();
@@ -16,21 +19,47 @@
           });
     });
     </script>
+    <style media="screen">
+      #comment_box{
+        padding:5%;
+
+      }
+      #show_orders{
+                width: 38%;
+                 height: 100%;
+                 padding: 2%;
+                 margin-left:5%;
+                 margin-top:-53px
+      }
+      body{
+        background-image: url('https://wallpaperscraft.com/image/restaurant_table_interior_modern_style_39288_1920x1080.jpg');
+      }
+    </style>
   </head>
   <body>
-    <div id="comment_box" style = "padding:5%;">
-      <textarea id="order" rows="5" cols="70"></textarea><br /><br />
-      <input type="button" id="add_order" value="Add your order here........">
-    </div>
-      <div
-       id    = "show_orders"
-       class = "jumbotron"
-       style = "width: 38%;
-                height: 100%;
-                padding: 2%;
-                margin-left:5%;
-                margin-top:-53px;"
-     >
+    <nav class='blue'>
+      <div class="navbar-wrapper container">
+        <a href="#" class='brand-logo'>Hello</a>
+        <ul class='right'>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
       </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div id="comment_box" style = "padding:5%;" background-image='images/restaurant_table_interior_modern_style.jpeg'>
+          <textarea id="order" rows="5" cols="70"></textarea><br /><br />
+          <input class='btn'type="button" id="add_order" value="Add your order">
+        </div>
+      </div>
+      <div class="row">
+        <div id= "show_orders" class = "container jumbotron">
+        </div>
+      </div>
+
+    </div>
+      <footer class='page-footer blue'></footer>
   </body>
 </html>
